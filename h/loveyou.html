@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Valentine's Day, My Love! ❤️</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(45deg, #ff85a2, #ff6b6b);
+            color: #fff;
+            text-align: center;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            padding: 50px 0;
+            animation: fadeIn 2s;
+        }
+
+        h1 {
+            font-size: 3.5em;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .heart {
+            font-size: 4em;
+            animation: heartbeat 1.2s infinite;
+        }
+
+        .love-letter {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 30px;
+            border-radius: 15px;
+            margin: 20px 0;
+            color: #ff6b6b;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .photos {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin: 40px 0;
+        }
+
+        .photos img {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid white;
+            transition: transform 0.3s;
+        }
+
+        .photos img:hover {
+            transform: scale(1.1);
+        }
+
+        button {
+            background: #ff4757;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 25px;
+            font-size: 1.2em;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+
+        button:hover {
+            transform: scale(1.05);
+        }
+
+        @keyframes heartbeat {
+            0% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.1);
+            }
+
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <div class="heart">❤️</div>
+            <h1>Happy Valentine's Day!</h1>
+            <p>My Dearest SALMA,</p>
+        </header>
+
+        <div class="love-letter">
+            <p>From the moment I met you, my life changed in the most beautiful way...</p>
+            <p>You’re my heart, my joy, my everything. Every day with you feels like Valentine’s Day. I’m so grateful
+                for you and the love we share.</p>
+            <p>You're my everything, today and always. I love you more than words can say. ❤️</p>
+        </div>
+
+        <div class="photos">
+            <img src="1.jpg" alt="Our Memory">
+            <img src="2.jpg" alt="Our Memory">
+            <img src="3.jpg" alt="Our Memory">
+        </div>
+
+        <button onclick="showSurprise()">Click for a Special Surprise!</button>
+
+        <div id="surprise" style="display: none; margin-top: 30px;">
+            <h2>You're My Forever Valentine</h2>
+            <p>You’re my heart, my joy, my everything. Every day with you feels like Valentine’s Day. I promise to
+                always cherish you, support your dreams, and make you laugh even on the toughest days.</p>
+        </div>
+    </div>
+
+    <script>
+        function showSurprise() {
+            document.getElementById('surprise').style.display = 'block';
+            const hearts = ['❤️', '💖', '💝', '🥰', '😍'];
+            for (let i = 0; i < 50; i++) {
+                setTimeout(() => {
+                    const heart = document.createElement('div');
+                    heart.style.position = 'fixed';
+                    heart.style.left = Math.random() * 100 + 'vw';
+                    heart.style.animation = 'fall ' + (Math.random() * 3 + 2) + 's linear';
+                    heart.textContent = hearts[Math.floor(Math.random() * hearts.length)];
+                    document.body.appendChild(heart);
+
+                    setTimeout(() => heart.remove(), 5000);
+                }, i * 100);
+            }
+        }
+
+        // Add falling animation
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes fall {
+                to {
+                    transform: translateY(100vh) rotate(360deg);
+                }
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
+</body>
+
+</html>
